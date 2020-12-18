@@ -1,25 +1,27 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('DailyFoodPreparations', {
+    await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      mealCategoryId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'mealCategories', key: 'id' },
-        onDelete: 'CASCADE',
+      firstName: {
+        type: Sequelize.STRING
       },
-      combinationId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'combinations', key: 'id' },
-        onDelete: 'CASCADE',
+      lastName: {
+        type: Sequelize.STRING
       },
-      quantityPrepared: {
-        type: Sequelize.FLOAT
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      roles: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('DailyFoodPreparations');
+    await queryInterface.dropTable('Users');
   }
 };

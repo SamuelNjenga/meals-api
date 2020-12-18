@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull:false
         }
       });
-      Item.hasMany(models.CombinationItems,{
+      Item.hasMany(models.CombinationItem,{
         onDelete:"cascade",
         foreignKey:{
           name:'itemId',

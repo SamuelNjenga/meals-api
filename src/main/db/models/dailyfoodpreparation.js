@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      DailyFoodPreparation.belongsTo(models.CombinationItem, {
+      DailyFoodPreparation.belongsTo(models.Combination, {
         foreignKey: {
-          name: 'combinationItemId',
+          name: 'combinationId',
           allowNull: false
         }
       });
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   DailyFoodPreparation.init({
     mealCategoryId: DataTypes.INTEGER,
-    combinationItemId: DataTypes.INTEGER,
+    combinationId: DataTypes.INTEGER,
     quantityPrepared: DataTypes.FLOAT
   }, {
     sequelize,

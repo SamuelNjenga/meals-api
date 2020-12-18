@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Combination.hasMany(models.DailyFoodPreparation,{
+        onDelete:"cascade",
+        foreignKey:{
+          name:'combinationId',
+          allowNull:false
+        }
+      });
       Combination.hasMany(models.CombinationItem,{
         onDelete:"cascade",
         foreignKey:{

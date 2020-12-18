@@ -23,13 +23,6 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false
         }
       });
-      CombinationItem.hasMany(models.DailyFoodPreparation,{
-        onDelete:"cascade",
-        foreignKey:{
-          name:'combinationItemId',
-          allowNull:false
-        }
-      });
     }
   };
   CombinationItem.init({
