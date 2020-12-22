@@ -8,10 +8,12 @@ const router = Router();
 const UserRoutes = require('./UserRoutes');
 const LoginRoutes = require('./LoginRoutes');
 const ItemRoutes = require('./ItemRoutes');
+const CombinationRoutes = require('./CombinationRoutes');
 
 router.use('/users', UserRoutes);
 router.use('/login', LoginRoutes);
 router.use('/items', ItemRoutes);
+router.use('/combinations', CombinationRoutes);
 
 router.use(crud('/admin/items', sequelizeCrud(db.Item)))
 router.use(crud('/admin/combinations', sequelizeCrud(db.Combination)))
