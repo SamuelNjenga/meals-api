@@ -11,11 +11,15 @@ const ItemRoutes = require('./ItemRoutes');
 const AvailableItemsStockRoutes = require('./AvailableItemsStockRoutes');
 const CombinationRoutes = require('./CombinationRoutes');
 const CombinationItemRoutes = require('./CombinationItemRoutes')
+const MealCategoriesRoutes = require('./MealCategoriesRoutes')
+
 
 router.use('/users', UserRoutes);
 router.use('/login', LoginRoutes);
 router.use('/items', ItemRoutes);
 router.use('/combinations', CombinationRoutes);
+router.use('/mealCategories', MealCategoriesRoutes
+)
 router.use('/combinationItems', CombinationItemRoutes);
 router.use('/availableItemsStock',AvailableItemsStockRoutes);
 
